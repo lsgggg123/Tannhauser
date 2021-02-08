@@ -1,0 +1,10 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: demo-route
+          uri: https://baidu.com/
+          predicates:
+            - Path=/spring-cloud
