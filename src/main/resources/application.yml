@@ -5,6 +5,12 @@ spring:
     gateway:
       routes:
         - id: demo-route
-          uri: https://baidu.com/
+          uri: https://yuque.antfin.com
           predicates:
-            - Path=/spring-cloud
+            - Path=/dashboard
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include=*:
