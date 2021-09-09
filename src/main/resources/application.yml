@@ -1,16 +1,11 @@
 server:
   port: 8080
+  
 spring:
   cloud:
     gateway:
       routes:
         - id: demo-route
-          uri: https://yuque.antfin.com
+          uri: https://baidu.com/
           predicates:
             - Path=/dashboard
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include=*:

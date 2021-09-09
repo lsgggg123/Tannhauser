@@ -21,7 +21,7 @@ public class MyGatewayFilter implements GatewayFilter {
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         ServerHttpRequest request = exchange.getRequest();
         ServerHttpResponse response = exchange.getResponse();
-
+        System.out.println("GatewayFilter filter");
         return chain.filter(exchange);
     }
 }

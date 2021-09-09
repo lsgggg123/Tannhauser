@@ -14,6 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class TannhauserApplication {
     public static void main(String[] args) {
+        System.setProperty("management.endpoints.web.exposure.include", "*");
         SpringApplication.run(TannhauserApplication.class, args);
     }
 }
