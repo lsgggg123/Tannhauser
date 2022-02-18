@@ -7,6 +7,7 @@ import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
+import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
@@ -15,6 +16,7 @@ import reactor.core.publisher.Mono;
  * @author ls
  * @version : MyGatewayFilter.java, v 0.1 2021年03月02日 8:26 下午 ls Exp $
  */
+@Component
 public class MyGatewayFilter implements GatewayFilter {
 
     @Override
