@@ -1,8 +1,6 @@
-/**
- * Alipay.com Inc. Copyright (c) 2004-2021 All Rights Reserved.
- */
 package com.lsgggg123.demo.tannhauser.filter;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.http.server.reactive.ServerHttpRequest;
@@ -11,11 +9,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
-/**
- *
- * @author ls
- * @version : MyGatewayFilter.java, v 0.1 2021年03月02日 8:26 下午 ls Exp $
- */
+@Slf4j
 @Component
 public class MyGatewayFilter implements GatewayFilter {
 
@@ -23,7 +17,8 @@ public class MyGatewayFilter implements GatewayFilter {
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         ServerHttpRequest request = exchange.getRequest();
         ServerHttpResponse response = exchange.getResponse();
-        System.out.println("GatewayFilter filter");
+        log.info("MyGatewayFilter#filter(), request uri: {}.", request.getURI());
+        response.getHeaders().add("spring-cloud-gateway", "MyGatewayFilter");
         return chain.filter(exchange);
     }
 }

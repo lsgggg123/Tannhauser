@@ -1,11 +1,21 @@
 server:
   port: 8080
   
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+   
 spring:
   cloud:
     gateway:
       routes:
-        - id: demo-route
-          uri: https://baidu.com/
+        - id: route1
           predicates:
-            - Path=/dashboard
+            - Path=/163/**
+          uri: https://www.163.com/
+        - id: route2
+          predicates:
+            - Path=/**
+          uri: http://127.0.0.1

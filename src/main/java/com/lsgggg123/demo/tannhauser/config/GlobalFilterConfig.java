@@ -1,23 +1,15 @@
-/**
- * Alipay.com Inc. Copyright (c) 2004-2021 All Rights Reserved.
- */
-package com.lsgggg123.demo.tannhauser.filter;
+package com.lsgggg123.demo.tannhauser.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
-/**
- * @author ls
- * @version : FilterConfig.java, v 0.1 2021年03月02日 9:00 下午 ls Exp $
- */
-@Configuration
+// @Configuration
 public class GlobalFilterConfig {
     @Bean
     @Order(-1)
